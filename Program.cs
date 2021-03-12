@@ -15,6 +15,7 @@ namespace EventSampleCode
             var fileLister = new FileSearcher();
             int filesFound = 0;
 
+            Console.WriteLine("branch");
             // <SnippetDeclareEventHandler>
             EventHandler<FileFoundArgs> onFileFound = (sender, eventArgs) =>
             {
