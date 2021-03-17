@@ -43,5 +43,5 @@ jobs:
         shell: powershell
         run: |
           .\.sonar\scanner\dotnet-sonarscanner begin /k:"csharp-test" /d:sonar.host.url="${{ secrets.SONAR_HOST_URL }}"
-          <your clean build command>
+          dotnet build
           .\.sonar\scanner\dotnet-sonarscanner end
