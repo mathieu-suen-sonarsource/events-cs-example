@@ -40,9 +40,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
         shell: powershell
         run: |
-          .\.sonar\scanner\dotnet-sonarscanner begin /k:"csharp-test"
-          dotnet build
+          .\.sonar\scanner\dotnet-sonarscanner begin /k:"csharp-test" /d:sonar.host.url="${{ secrets.SONAR_HOST_URL }}"
+          <your clean build command>
           .\.sonar\scanner\dotnet-sonarscanner end
